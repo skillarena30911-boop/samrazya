@@ -1,169 +1,315 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Services · MAX ENTERPRISES</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samrazya - Official</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background: #f8fafc; }
-
-        .navbar {
-            background: white;
-            padding: 1rem 6%;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: #0a0e1a;
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
         }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { background: #0b2b4f; color: white; width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.3rem; }
-        .logo h1 { font-size: 1.5rem; font-weight: 700; color: #0b1e33; }
-        .logo span { color: #1e4f8a; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: #334155; font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #1e4f8a; font-weight: 600; }
-        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #0b1e33; }
+        /* SAMRAZYA style background glow */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.04) 0%, transparent 70%);
+            top: -300px;
+            right: -200px;
+            pointer-events: none;
+        }
+        .container {
+            max-width: 440px;
+            width: 100%;
+            background: linear-gradient(145deg, #0d1225, #131b30);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            border-radius: 28px;
+            padding: 50px 30px 40px;
+            text-align: center;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(212, 175, 55, 0.05);
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* ====== SAMRAZYA EXACT LOGO STYLE ====== */
+        .logo-wrapper {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .crown-icon {
+            font-size: 42px;
+            display: block;
+            margin-bottom: -5px;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.15));
+            letter-spacing: 0;
+            line-height: 1;
+        }
+        .logo-text {
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            background: linear-gradient(180deg, #f7e8b0 0%, #d4af37 40%, #b8941e 80%, #8a6f15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.08);
+            line-height: 1.1;
+            position: relative;
+            display: inline-block;
+        }
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+        }
+        .logo-sub {
+            font-size: 9px;
+            letter-spacing: 6px;
+            color: rgba(212, 175, 55, 0.2);
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        /* ====================================== */
 
-        .services-section {
-            max-width: 1100px;
-            margin: 3rem auto;
-            padding: 0 6%;
+        .tagline {
+            color: rgba(212, 175, 55, 0.4);
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 18px;
+            font-weight: 400;
+        }
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+            margin: 12px auto 16px;
+        }
+        
+        p {
+            color: #8a94a8;
+            font-size: 13.5px;
+            line-height: 1.8;
+            margin-bottom: 28px;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+        p span {
+            color: #d4af37;
+            font-weight: 500;
+        }
+        .highlight-text {
+            color: #d4af37;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
-        .services-section h2 {
-            font-size: 2.5rem;
+        /* Buttons - SAMRAZYA style */
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 17px 24px;
+            background: linear-gradient(135deg, #d4af37, #b8941e);
+            color: #0a0e1a;
+            text-decoration: none;
+            font-size: 15px;
             font-weight: 700;
-            color: #0b1e33;
-            text-align: center;
-            margin-bottom: 0.5rem;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 28px rgba(212, 175, 55, 0.15);
+            margin-bottom: 12px;
+            letter-spacing: 0.8px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            position: relative;
+            overflow: hidden;
         }
-        .services-section .sub {
-            text-align: center;
-            color: #64748b;
-            margin-bottom: 3rem;
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+            animation: shimmer 4s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, #e6c552, #c9a22a);
+        }
+        
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 17px 24px;
+            background: transparent;
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            border: 1.5px solid rgba(212, 175, 55, 0.12);
+            letter-spacing: 0.8px;
+        }
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.04);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.04);
+        }
+        .btn-icon {
+            margin-right: 12px;
+            font-size: 16px;
+            opacity: 0.8;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem 1.8rem;
-            border-radius: 20px;
-            border: 1px solid #e9edf2;
-            transition: 0.4s;
-            text-align: center;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-        }
-
-        .service-card i {
-            font-size: 3rem;
-            color: #1e4f8a;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            color: #0b1e33;
-            margin-bottom: 0.5rem;
-        }
-
-        .service-card p {
-            color: #64748b;
+        .footer-note {
+            font-size: 10px;
+            color: #2a3348;
+            margin-top: 25px;
             line-height: 1.6;
+            letter-spacing: 0.5px;
+        }
+        .footer-note span {
+            color: rgba(212, 175, 55, 0.15);
         }
 
-        .footer {
-            background: #0b1e33;
-            color: white;
-            padding: 2rem 6%;
-            text-align: center;
-            margin-top: 3rem;
+        /* subtle border animation like SAMRAZYA */
+        .container {
+            animation: borderGlow 4s ease-in-out infinite;
         }
-        .footer a { color: #fcd34d; text-decoration: none; }
-        .footer .social a { color: white; margin: 0 10px; font-size: 1.3rem; opacity: 0.7; transition: 0.3s; }
-        .footer .social a:hover { opacity: 1; }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; background: white; position: absolute; top: 70px; left: 0; width: 100%; padding: 1.5rem; }
-            .nav-links.open { display: flex; }
-            .menu-toggle { display: block; }
-            .services-section h2 { font-size: 2rem; }
+        @keyframes borderGlow {
+            0%, 100% { border-color: rgba(212, 175, 55, 0.08); }
+            50% { border-color: rgba(212, 175, 55, 0.18); }
         }
     </style>
+
+    <!-- ================================================================ -->
+    <!-- 🔥 META PIXEL - Advanced Bot Protection (3 Layer)               -->
+    <!-- Pixel ID: 2866373487043890                                      -->
+    <!-- ================================================================ -->
+    <script>
+    (function() {
+        // LAYER 1: WebDriver & Headless Bot Detection
+        var isBot = false;
+        if (navigator.webdriver) isBot = true;
+        if (window.chrome && !window.chrome.loadTimes) isBot = true;  // Some headless
+        if (navigator.userAgent.indexOf('Headless') !== -1) isBot = true;
+        if (navigator.userAgent.indexOf('PhantomJS') !== -1) isBot = true;
+        if (navigator.userAgent.indexOf('Puppeteer') !== -1) isBot = true;
+        if (navigator.languages && navigator.languages.length === 0) isBot = true;
+
+        // LAYER 2: Only load for real users after page + delay
+        if (!isBot) {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    // Dynamic Pixel Load
+                    var fbScript = document.createElement('script');
+                    fbScript.async = true;
+                    fbScript.src = 'https://connect.facebook.net/en_US/fbevents.js';
+                    document.head.appendChild(fbScript);
+
+                    fbScript.onload = function() {
+                        if (typeof fbq !== 'undefined') {
+                            fbq('init', '2866373487043890');
+                            fbq('track', 'PageView');
+                            
+                            // Event tracking with safe selectors
+                            document.querySelectorAll('a[href*="samrazya.com"]').forEach(function(btn) {
+                                btn.addEventListener('click', function() {
+                                    if (typeof fbq !== 'undefined') {
+                                        fbq('track', 'Lead', {
+                                            content_name: 'CTA_Click_Samrazya'
+                                        });
+                                    }
+                                });
+                            });
+                        }
+                    };
+                }, 1200); // 1.2 sec delay for natural behavior
+            });
+
+            // LAYER 3: Fallback Image (noscript alternative) with delay
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    var img = document.createElement('img');
+                    img.height = 1;
+                    img.width = 1;
+                    img.style.display = 'none';
+                    img.src = 'https://www.facebook.com/tr?id=2866373487043890&ev=PageView&noscript=1';
+                    document.body.appendChild(img);
+                }, 1500);
+            });
+        }
+    })();
+    </script>
+    <!-- ================================================================ -->
+
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="logo">
-        <div class="logo-icon">ME</div>
-        <h1>MAX <span>ENTERPRISES</span></h1>
+    <div class="container">
+        
+        <!-- ====== SAMRAZYA EXACT LOGO ====== -->
+        <div class="logo-wrapper">
+            <span class="crown-icon">👑</span>
+            <div class="logo-text">SAMRAZYA</div>
+            <div class="logo-sub">— premium —</div>
+        </div>
+        <!-- ================================= -->
+
+        <div class="tagline">elite platform</div>
+        <div class="divider"></div>
+        
+        <p>
+            India's most trusted & fastest platform.<br>
+            Get your <span class="highlight-text">!d</span> instantly.<br>
+            <span>24/7 support</span> available.
+        </p>
+
+        <!-- 🔥 DONO BUTTONS PAR SIRF samrazya.com (NO NUMBER) -->
+        <a href="https://samrazya.com" class="btn-gold" target="_blank">
+            <span class="btn-icon">✦</span> Join SAMRAZYA
+        </a>
+        
+        <a href="https://samrazya.com" class="btn-outline" target="_blank">
+            <span class="btn-icon">➤</span> Get Your !d Now
+        </a>
+
+        <p class="footer-note">
+            <span>✦</span> 18+ only · play responsibly <span>✦</span>
+        </p>
     </div>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-</nav>
-
-<section class="services-section">
-    <h2>Our <span style="color:#1e4f8a;">Services</span></h2>
-    <p class="sub">Delivering quality and reliability in every trade</p>
-
-    <div class="services-grid">
-        <div class="service-card">
-            <i class="fas fa-apple-alt"></i>
-            <h3>Fruit Wholesale</h3>
-            <p>Premium quality fresh fruits sourced directly from farms across India.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-carrot"></i>
-            <h3>Vegetable Trade</h3>
-            <p>Wide range of seasonal and exotic vegetables at competitive rates.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-truck"></i>
-            <h3>Logistics Support</h3>
-            <p>Reliable and timely delivery with cold-chain logistics for freshness.</p>
-        </div>
-        <div class="service-card">
-            <i class="fas fa-handshake"></i>
-            <h3>B2B Partnerships</h3>
-            <p>Long-term wholesale partnerships with retailers, hotels, and restaurants.</p>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <p>&copy; 2026 MAX ENTERPRISES · Udyam Reg: UDYAM-BR-08-0038165</p>
-    <div class="social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-</footer>
-
-<script>
-    function toggleMenu() {
-        document.getElementById('navLinks').classList.toggle('open');
-    }
-</script>
 
 </body>
 </html>
