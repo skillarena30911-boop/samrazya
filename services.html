@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Services · MAX ENTERPRISES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: #f8fafc; }
+
+        .navbar {
+            background: white;
+            padding: 1rem 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { background: #0b2b4f; color: white; width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.3rem; }
+        .logo h1 { font-size: 1.5rem; font-weight: 700; color: #0b1e33; }
+        .logo span { color: #1e4f8a; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: #334155; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #1e4f8a; font-weight: 600; }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #0b1e33; }
+
+        .services-section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 6%;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0b1e33;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .services-section .sub {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem 1.8rem;
+            border-radius: 20px;
+            border: 1px solid #e9edf2;
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: #1e4f8a;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: #0b1e33;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background: #0b1e33;
+            color: white;
+            padding: 2rem 6%;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .footer a { color: #fcd34d; text-decoration: none; }
+        .footer .social a { color: white; margin: 0 10px; font-size: 1.3rem; opacity: 0.7; transition: 0.3s; }
+        .footer .social a:hover { opacity: 1; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; flex-direction: column; background: white; position: absolute; top: 70px; left: 0; width: 100%; padding: 1.5rem; }
+            .nav-links.open { display: flex; }
+            .menu-toggle { display: block; }
+            .services-section h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <div class="logo-icon">ME</div>
+        <h1>MAX <span>ENTERPRISES</span></h1>
+    </div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+</nav>
+
+<section class="services-section">
+    <h2>Our <span style="color:#1e4f8a;">Services</span></h2>
+    <p class="sub">Delivering quality and reliability in every trade</p>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <i class="fas fa-apple-alt"></i>
+            <h3>Fruit Wholesale</h3>
+            <p>Premium quality fresh fruits sourced directly from farms across India.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-carrot"></i>
+            <h3>Vegetable Trade</h3>
+            <p>Wide range of seasonal and exotic vegetables at competitive rates.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-truck"></i>
+            <h3>Logistics Support</h3>
+            <p>Reliable and timely delivery with cold-chain logistics for freshness.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-handshake"></i>
+            <h3>B2B Partnerships</h3>
+            <p>Long-term wholesale partnerships with retailers, hotels, and restaurants.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2026 MAX ENTERPRISES · Udyam Reg: UDYAM-BR-08-0038165</p>
+    <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('navLinks').classList.toggle('open');
+    }
+</script>
+
+</body>
+</html>
