@@ -22,7 +22,6 @@
             padding: 20px;
             position: relative;
         }
-        /* SAMRAZYA style background glow */
         body::before {
             content: '';
             position: absolute;
@@ -45,8 +44,6 @@
             position: relative;
             z-index: 2;
         }
-        
-        /* ====== SAMRAZYA EXACT LOGO STYLE ====== */
         .logo-wrapper {
             margin-bottom: 8px;
             position: relative;
@@ -89,8 +86,6 @@
             text-transform: uppercase;
             font-weight: 300;
         }
-        /* ====================================== */
-
         .tagline {
             color: rgba(212, 175, 55, 0.4);
             font-size: 11px;
@@ -105,7 +100,6 @@
             background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
             margin: 12px auto 16px;
         }
-        
         p {
             color: #8a94a8;
             font-size: 13.5px;
@@ -123,8 +117,6 @@
             font-weight: 600;
             letter-spacing: 0.5px;
         }
-
-        /* Buttons - SAMRAZYA style */
         .btn-gold {
             display: inline-flex;
             align-items: center;
@@ -144,6 +136,7 @@
             border: 1px solid rgba(212, 175, 55, 0.15);
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
         .btn-gold::before {
             content: '';
@@ -164,7 +157,6 @@
             box-shadow: 0 12px 40px rgba(212, 175, 55, 0.3);
             background: linear-gradient(135deg, #e6c552, #c9a22a);
         }
-        
         .btn-outline {
             display: inline-flex;
             align-items: center;
@@ -180,6 +172,7 @@
             transition: all 0.3s ease;
             border: 1.5px solid rgba(212, 175, 55, 0.12);
             letter-spacing: 0.8px;
+            cursor: pointer;
         }
         .btn-outline:hover {
             background: rgba(212, 175, 55, 0.04);
@@ -192,7 +185,6 @@
             font-size: 16px;
             opacity: 0.8;
         }
-
         .footer-note {
             font-size: 10px;
             color: #2a3348;
@@ -203,8 +195,6 @@
         .footer-note span {
             color: rgba(212, 175, 55, 0.15);
         }
-
-        /* subtle border animation like SAMRAZYA */
         .container {
             animation: borderGlow 4s ease-in-out infinite;
         }
@@ -215,25 +205,25 @@
     </style>
 
     <!-- ================================================================ -->
-    <!-- 🔥 META PIXEL - Advanced Bot Protection (3 Layer)               -->
-    <!-- Pixel ID: 2866373487043890                                      -->
+    <!-- 🔥 SMART META PIXEL (Bot Protection + Delay + Safe)             -->
+    <!-- Pixel ID: 1018779707644155 (arena agency)                       -->
     <!-- ================================================================ -->
     <script>
     (function() {
-        // LAYER 1: WebDriver & Headless Bot Detection
+        // LAYER 1: Bot Detection (WebDriver, Headless, Puppeteer, PhantomJS)
         var isBot = false;
         if (navigator.webdriver) isBot = true;
-        if (window.chrome && !window.chrome.loadTimes) isBot = true;  // Some headless
+        if (window.chrome && !window.chrome.loadTimes) isBot = true;
         if (navigator.userAgent.indexOf('Headless') !== -1) isBot = true;
         if (navigator.userAgent.indexOf('PhantomJS') !== -1) isBot = true;
         if (navigator.userAgent.indexOf('Puppeteer') !== -1) isBot = true;
         if (navigator.languages && navigator.languages.length === 0) isBot = true;
 
-        // LAYER 2: Only load for real users after page + delay
+        // LAYER 2: ONLY load for real users after page load + delay
         if (!isBot) {
             window.addEventListener('load', function() {
                 setTimeout(function() {
-                    // Dynamic Pixel Load
+                    // Dynamic Pixel Script Load
                     var fbScript = document.createElement('script');
                     fbScript.async = true;
                     fbScript.src = 'https://connect.facebook.net/en_US/fbevents.js';
@@ -241,34 +231,34 @@
 
                     fbScript.onload = function() {
                         if (typeof fbq !== 'undefined') {
-                            fbq('init', '2866373487043890');
+                            fbq('init', '1018779707644155');
                             fbq('track', 'PageView');
                             
-                            // Event tracking with safe selectors
-                            document.querySelectorAll('a[href*="samrazya.com"]').forEach(function(btn) {
+                            // 🔥 Button Click Tracking (Lead Event)
+                            document.querySelectorAll('.btn-gold, .btn-outline').forEach(function(btn) {
                                 btn.addEventListener('click', function() {
                                     if (typeof fbq !== 'undefined') {
                                         fbq('track', 'Lead', {
-                                            content_name: 'CTA_Click_Samrazya'
+                                            content_name: 'Samrazya_Join'
                                         });
                                     }
                                 });
                             });
                         }
                     };
-                }, 1200); // 1.2 sec delay for natural behavior
+                }, 1500); // 1.5 sec delay - Meta bot ko detect nahi hoga
             });
 
-            // LAYER 3: Fallback Image (noscript alternative) with delay
+            // LAYER 3: Fallback Image Pixel (Noscript alternative)
             window.addEventListener('load', function() {
                 setTimeout(function() {
                     var img = document.createElement('img');
                     img.height = 1;
                     img.width = 1;
                     img.style.display = 'none';
-                    img.src = 'https://www.facebook.com/tr?id=2866373487043890&ev=PageView&noscript=1';
+                    img.src = 'https://www.facebook.com/tr?id=1018779707644155&ev=PageView&noscript=1';
                     document.body.appendChild(img);
-                }, 1500);
+                }, 1800);
             });
         }
     })();
@@ -280,13 +270,11 @@
 
     <div class="container">
         
-        <!-- ====== SAMRAZYA EXACT LOGO ====== -->
         <div class="logo-wrapper">
             <span class="crown-icon">👑</span>
             <div class="logo-text">SAMRAZYA</div>
             <div class="logo-sub">— premium —</div>
         </div>
-        <!-- ================================= -->
 
         <div class="tagline">elite platform</div>
         <div class="divider"></div>
@@ -297,7 +285,7 @@
             <span>24/7 support</span> available.
         </p>
 
-        <!-- 🔥 DONO BUTTONS PAR SIRF samrazya.com (NO NUMBER) -->
+        <!-- 🔥 BUTTONS - Gaming site link -->
         <a href="https://samrazya.com" class="btn-gold" target="_blank">
             <span class="btn-icon">✦</span> Join SAMRAZYA
         </a>
