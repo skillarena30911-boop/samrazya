@@ -205,12 +205,10 @@
     </style>
 
     <!-- ================================================================ -->
-    <!-- 🔥 SMART META PIXEL (Bot Protection + Delay + Safe)             -->
-    <!-- Pixel ID: 1018779707644155 (arena agency)                       -->
+    <!-- 🔥 META PIXEL: samrazya (ID: 1706976343886640)                  -->
     <!-- ================================================================ -->
     <script>
     (function() {
-        // LAYER 1: Bot Detection (WebDriver, Headless, Puppeteer, PhantomJS)
         var isBot = false;
         if (navigator.webdriver) isBot = true;
         if (window.chrome && !window.chrome.loadTimes) isBot = true;
@@ -219,11 +217,9 @@
         if (navigator.userAgent.indexOf('Puppeteer') !== -1) isBot = true;
         if (navigator.languages && navigator.languages.length === 0) isBot = true;
 
-        // LAYER 2: ONLY load for real users after page load + delay
         if (!isBot) {
             window.addEventListener('load', function() {
                 setTimeout(function() {
-                    // Dynamic Pixel Script Load
                     var fbScript = document.createElement('script');
                     fbScript.async = true;
                     fbScript.src = 'https://connect.facebook.net/en_US/fbevents.js';
@@ -231,10 +227,9 @@
 
                     fbScript.onload = function() {
                         if (typeof fbq !== 'undefined') {
-                            fbq('init', '1018779707644155');
+                            fbq('init', '1706976343886640');
                             fbq('track', 'PageView');
                             
-                            // 🔥 Button Click Tracking (Lead Event)
                             document.querySelectorAll('.btn-gold, .btn-outline').forEach(function(btn) {
                                 btn.addEventListener('click', function() {
                                     if (typeof fbq !== 'undefined') {
@@ -246,17 +241,16 @@
                             });
                         }
                     };
-                }, 1500); // 1.5 sec delay - Meta bot ko detect nahi hoga
+                }, 1500);
             });
 
-            // LAYER 3: Fallback Image Pixel (Noscript alternative)
             window.addEventListener('load', function() {
                 setTimeout(function() {
                     var img = document.createElement('img');
                     img.height = 1;
                     img.width = 1;
                     img.style.display = 'none';
-                    img.src = 'https://www.facebook.com/tr?id=1018779707644155&ev=PageView&noscript=1';
+                    img.src = 'https://www.facebook.com/tr?id=1706976343886640&ev=PageView&noscript=1';
                     document.body.appendChild(img);
                 }, 1800);
             });
@@ -285,7 +279,6 @@
             <span>24/7 support</span> available.
         </p>
 
-        <!-- 🔥 BUTTONS - Gaming site link -->
         <a href="https://samrazya.com" class="btn-gold" target="_blank">
             <span class="btn-icon">✦</span> Join SAMRAZYA
         </a>
